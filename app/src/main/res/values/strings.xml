@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">MyAvatar</string>
+
+    <string name="hintNombre">Escribe tu nombre</string>
+
+    <!-- INFORMACIÓN GENERAL -->
+    <string name="nombre">Nombre: %s</string>
+    <string name="genero">Sexo: %s</string>
+    <string name="especie">Especie: %s</string>
+    <string name="profesion">Profesión: %s</string>
+
+    <!-- ATRIBUTOS -->
+    <string name="vida">Vida: %d</string>
+    <string name="magia">Magia: %d</string>
+    <string name="fuerza">Fuerza: %d</string>
+    <string name="velocidad">Velocidad: %d</string>
+
+    <!-- Títulos diálogos -->
+    <string name="dlgNombre">Nombre</string>
+    <string name="dlgGenero">Sexo</string>
+    <string name="dlgEspecie">Especie</string>
+    <string name="dlgProfesion">Clase</string>
+
+    <!-- BOTONES -->
+    <string name="btnAceptar">ACEPTAR</string>
+    <string name="btnCancelar">CANCELAR</string>
+    <string name="foto">GUARDAR</string>
+    <string name="volver">VOLVER</string>
+
+    <!-- MENSAJES DE ERROR -->
+    <string name="error_nombre">Indica un nombre</string>
+    <string name="error_genero">Indica el género</string>
+    <string name="error_especie">Indica la especie</string>
+    <string name="error_profesion">Indica la profesión</string>
+    <string name="error_cancelar">Has cancelado todo</string>
+
+    <!-- GÉNEROS -->
+    <string name="genMas">Hombre</string>
+    <string name="genFem">Mujer</string>
+
+    <!-- ESPECIES -->
+    <string name="elfo">Elfo</string>
+    <string name="enano">Enano</string>
+    <string name="hobbit">Hobbit</string>
+    <string name="humano">Humano</string>
+
+    <!-- PROFESIONES -->
+    <string name="archer">Arquero</string>
+    <string name="warrior">Guerrero</string>
+    <string name="magician">Mago</string>
+    <string name="swordsmith">Herrero</string>
+    <string name="miner">Minero</string>
+</resources>
