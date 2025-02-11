@@ -14,7 +14,7 @@ import androidx.fragment.app.DialogFragment;
 
 public class Nombre extends DialogFragment
 {
-    MostrarInfo listener;
+    Interfaz listener;
     MainActivity main;
     EditText nombreAvatar;
     Genero gen;
@@ -26,12 +26,12 @@ public class Nombre extends DialogFragment
         try
         {
             // Verifica que el contexto implemente la interfaz
-            listener = (MostrarInfo) context;
+            listener = (Interfaz) context;
             main = (MainActivity) context;
         }
         catch (ClassCastException e)
         {
-            throw new ClassCastException(context.toString() + " debe implementar MostrarInfo");
+            throw new ClassCastException(context.toString() + " debe implementar Interfaz");
         }
     }
 
@@ -51,7 +51,7 @@ public class Nombre extends DialogFragment
                 .setPositiveButton(R.string.btnAceptar, null) // Creación del botón positivo, sin funcionalidad aún
                 .setNegativeButton(R.string.btnCancelar, (dialog, which) -> {
                     Toast.makeText(getActivity(), R.string.error_cancelar, Toast.LENGTH_SHORT).show();
-                    main.btnReiniciar.setVisibility(View.VISIBLE);
+                    main.btnVolver.setVisibility(View.VISIBLE);
                 });
 
         AlertDialog dialog = builder.create();

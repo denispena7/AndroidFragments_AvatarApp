@@ -25,8 +25,10 @@
         android:id="@+id/radioGroup"
         android:layout_width="213dp"
         android:layout_height="53dp"
-        android:orientation="horizontal"
+        android:background="@color/VioletaClaro"
+        android:backgroundTint="@color/VioletaClaro"
         android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,9 +36,11 @@
         app:layout_constraintVertical_bias="0.037">
 
         <RadioButton
-            android:id="@+id/rdMasc"
+            android:id="@+id/rdMas"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/VioletaClaro"
+            android:buttonTint="@color/morado"
             android:text="@string/genMas"
             android:textSize="16sp" />
 
@@ -44,6 +48,8 @@
             android:id="@+id/rdFem"
             android:layout_width="99dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/VioletaClaro"
+            android:buttonTint="@color/morado"
             android:text="@string/genFem"
             android:textSize="16sp" />
     </RadioGroup>

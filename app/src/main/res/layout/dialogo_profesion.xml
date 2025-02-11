@@ -8,6 +8,7 @@
     <GridLayout
         android:layout_width="281dp"
         android:layout_height="100dp"
+        android:background="@color/VioletaClaro"
         android:columnCount="3"
         android:rowCount="2"
         app:layout_constraintBottom_toBottomOf="parent"

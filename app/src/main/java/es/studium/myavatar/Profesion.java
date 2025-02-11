@@ -14,14 +14,14 @@ import androidx.fragment.app.DialogFragment;
 
 public class Profesion extends DialogFragment
 {
-    private MostrarInfo listener;
+    private Interfaz listener;
     private MainActivity main;
 
-    RadioButton proArquero;
-    RadioButton proGuerrero;
-    RadioButton proMago;
-    RadioButton proHerrero;
-    RadioButton proMinero;
+    RadioButton Arquero;
+    RadioButton Guerrero;
+    RadioButton Mago;
+    RadioButton Herrero;
+    RadioButton Minero;
 
     @Override
     public void onAttach(@NonNull Context context)
@@ -30,12 +30,12 @@ public class Profesion extends DialogFragment
         try
         {
             // Verifica que el contexto implemente la interfaz
-            listener = (MostrarInfo) context;
+            listener = (Interfaz) context;
             main = (MainActivity) context;
         }
         catch (ClassCastException e)
         {
-            throw new ClassCastException(context.toString() + " debe implementar MostrarInfo");
+            throw new ClassCastException(context.toString() + " debe implementar Interfaz");
         }
     }
 
@@ -48,14 +48,14 @@ public class Profesion extends DialogFragment
         View myView = inflater.inflate(R.layout.dialogo_profesion, null);
         builder.setView(myView);
 
-        proArquero = myView.findViewById(R.id.rdArquero);
-        proGuerrero = myView.findViewById(R.id.rdGuerrero);
-        proMago = myView.findViewById(R.id.rdMago);
-        proHerrero = myView.findViewById(R.id.rdHerrero);
-        proMinero = myView.findViewById(R.id.rdMinero);
+        Arquero = myView.findViewById(R.id.rdArquero);
+        Guerrero = myView.findViewById(R.id.rdGuerrero);
+        Mago = myView.findViewById(R.id.rdMago);
+        Herrero = myView.findViewById(R.id.rdHerrero);
+        Minero = myView.findViewById(R.id.rdMinero);
 
         // Agrupamos los botones en un array para manejarlos de forma más sencilla
-        RadioButton[] radioButtons = {proArquero, proGuerrero, proMago, proHerrero, proMinero};
+        RadioButton[] radioButtons = {Arquero, Guerrero, Mago, Herrero, Minero};
 
         // Configuramos un OnClickListener para cada RadioButton
         for (RadioButton radioButton : radioButtons)
@@ -73,7 +73,7 @@ public class Profesion extends DialogFragment
                 .setPositiveButton(R.string.btnAceptar, null) // Creación del botón positivo, sin funcionalidad aún
                 .setNegativeButton(R.string.btnCancelar, (dialog, which) -> {
                     Toast.makeText(getActivity(), R.string.error_cancelar, Toast.LENGTH_SHORT).show();
-                    main.btnReiniciar.setVisibility(View.VISIBLE);
+                    main.btnVolver.setVisibility(View.VISIBLE);
                 });
 
         AlertDialog dialog = builder.create();
@@ -87,25 +87,25 @@ public class Profesion extends DialogFragment
                     String genero = main.genero.getText().toString().split(": ")[1];
                     String especie = main.especie.getText().toString().split(": ")[1];
 
-                    if(proArquero.isChecked())
+                    if(Arquero.isChecked())
                     {
-                        mostrarTodo(listener, proArquero.getText().toString(), genero, especie, () -> dialog.dismiss());
+                        mostrarTodo(listener, Arquero.getText().toString(), genero, especie, () -> dialog.dismiss());
                     }
-                    else if(proGuerrero.isChecked())
+                    else if(Guerrero.isChecked())
                     {
-                        mostrarTodo(listener, proGuerrero.getText().toString(), genero, especie, () -> dialog.dismiss());
+                        mostrarTodo(listener, Guerrero.getText().toString(), genero, especie, () -> dialog.dismiss());
                     }
-                    else if(proMago.isChecked())
+                    else if(Mago.isChecked())
                     {
-                        mostrarTodo(listener, proMago.getText().toString(), genero, especie, () -> dialog.dismiss());
+                        mostrarTodo(listener, Mago.getText().toString(), genero, especie, () -> dialog.dismiss());
                     }
-                    else if(proHerrero.isChecked())
+                    else if(Herrero.isChecked())
                     {
-                        mostrarTodo(listener, proHerrero.getText().toString(), genero, especie, () -> dialog.dismiss());
+                        mostrarTodo(listener, Herrero.getText().toString(), genero, especie, () -> dialog.dismiss());
                     }
-                    else if(proMinero.isChecked())
+                    else if(Minero.isChecked())
                     {
-                        mostrarTodo(listener, proMinero.getText().toString(), genero, especie, () -> dialog.dismiss());
+                        mostrarTodo(listener, Minero.getText().toString(), genero, especie, () -> dialog.dismiss());
                     }
                     else
                     {
@@ -121,7 +121,7 @@ public class Profesion extends DialogFragment
         return dialog;
     }
 
-    public void mostrarTodo(MostrarInfo listener, String profesion, String genero, String especie, Runnable onComplete)
+    public void mostrarTodo(Interfaz listener, String profesion, String genero, String especie, Runnable onComplete)
     {
         // Validaciones de seguridad
         if (listener == null ||  genero == null || especie == null || profesion == null || onComplete == null)

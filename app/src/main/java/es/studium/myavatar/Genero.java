@@ -14,10 +14,10 @@ import androidx.fragment.app.DialogFragment;
 
 public class Genero extends DialogFragment
 {
-    MostrarInfo listener;
+    Interfaz listener;
     MainActivity main;
-    RadioButton genMas;
-    RadioButton genFem;
+    RadioButton Mas;
+    RadioButton Fem;
 
     @Override
     public void onAttach(@NonNull Context context)
@@ -26,12 +26,12 @@ public class Genero extends DialogFragment
         try
         {
             // Verifica que el contexto implemente la interfaz
-            listener = (MostrarInfo) context;
+            listener = (Interfaz) context;
             main = (MainActivity) context;
         }
         catch (ClassCastException e)
         {
-            throw new ClassCastException(context.toString() + " debe implementar MostrarInfo");
+            throw new ClassCastException(context.toString() + " debe implementar Interfaz");
         }
     }
 
@@ -45,14 +45,14 @@ public class Genero extends DialogFragment
         View myView = inflater.inflate(R.layout.dialogo_genero, null);
         builder.setView(myView);
 
-        genMas = myView.findViewById(R.id.rdMasc);
-        genFem = myView.findViewById(R.id.rdFem);
+        Mas = myView.findViewById(R.id.rdMas);
+        Fem = myView.findViewById(R.id.rdFem);
 
         builder.setTitle(R.string.dlgGenero)
                 .setPositiveButton(R.string.btnAceptar, null) // Creación del botón positivo, sin funcionalidad aún
                 .setNegativeButton(R.string.btnCancelar, (dialog, which) -> {
                     Toast.makeText(getActivity(), R.string.error_cancelar, Toast.LENGTH_SHORT).show();
-                    main.btnReiniciar.setVisibility(View.VISIBLE);
+                    main.btnVolver.setVisibility(View.VISIBLE);
                 });
 
         AlertDialog dialog = builder.create();
@@ -63,15 +63,15 @@ public class Genero extends DialogFragment
             dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
                     try
                     {
-                        if(genMas.isChecked())
+                        if(Mas.isChecked())
                         {
-                            listener.establecerGenero(genMas.getText().toString());
+                            listener.establecerGenero(Mas.getText().toString());
 
                             mostrarDialogoEspecie(dialog);
                         }
-                        else if(genFem.isChecked())
+                        else if(Fem.isChecked())
                         {
-                            listener.establecerGenero(genFem.getText().toString());
+                            listener.establecerGenero(Fem.getText().toString());
 
                             mostrarDialogoEspecie(dialog);
                         }

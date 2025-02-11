@@ -3,8 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lavanda">#F4EFFA</color>
-    <color name="grisOscuro">#4A4A4A</color>
-    <color name="lavandaIntenso">#7B5DC8</color>
-    <color name="lavandaTenue">#D9D3E8</color>
-    <color name="PurpuraClaro">#A48AD6</color>
+    <color name="gris">#4A4A4A</color>
+    <color name="morado">#7B5DC8</color>
+    <color name="lavandaclaro">#D9D3E8</color>
+    <color name="VioletaClaro">#A48AD6</color>
+    <color name="Arenita">#FDE8B6</color>
 </resources>

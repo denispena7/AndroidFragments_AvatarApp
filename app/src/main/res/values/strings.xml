@@ -15,11 +15,11 @@
     <string name="fuerza">Fuerza: %d</string>
     <string name="velocidad">Velocidad: %d</string>
 
-    <!-- Títulos diálogos -->
+    <!-- DIALOGOS -->
     <string name="dlgNombre">Nombre</string>
     <string name="dlgGenero">Sexo</string>
     <string name="dlgEspecie">Especie</string>
-    <string name="dlgProfesion">Clase</string>
+    <string name="dlgProfesion">Profesion</string>
 
     <!-- BOTONES -->
     <string name="btnAceptar">ACEPTAR</string>

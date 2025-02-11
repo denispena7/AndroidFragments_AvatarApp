@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity implements MostrarInfo, View.OnClickListener
+public class MainActivity extends AppCompatActivity implements Interfaz, View.OnClickListener
 {
     Nombre nm;
 
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements MostrarInfo, View
     TextView magia;
     TextView fuerza;
     TextView velocidad;
-    Button btnReiniciar;
+    Button btnVolver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -35,18 +35,18 @@ public class MainActivity extends AppCompatActivity implements MostrarInfo, View
 
         avatar = findViewById(R.id.imgAvatar);
 
-        nombre = findViewById(R.id.lblNombre);
-        genero = findViewById(R.id.lblGenero);
-        especie = findViewById(R.id.lblEspecie);
-        profesion = findViewById(R.id.lblProfesion);
+        nombre = findViewById(R.id.Nombre);
+        genero = findViewById(R.id.Genero);
+        especie = findViewById(R.id.Especie);
+        profesion = findViewById(R.id.Profesion);
 
-        vida = findViewById(R.id.lblVida);
-        magia = findViewById(R.id.lblMagia);
-        fuerza = findViewById(R.id.lblFuerza);
-        velocidad = findViewById(R.id.lblVelocidad);
+        vida = findViewById(R.id.Vida);
+        magia = findViewById(R.id.Magia);
+        fuerza = findViewById(R.id.Fuerza);
+        velocidad = findViewById(R.id.Velocidad);
 
-        btnReiniciar = findViewById(R.id.btnReiniciar);
-        btnReiniciar.setOnClickListener(this);
+        btnVolver = findViewById(R.id.btnVolver);
+        btnVolver.setOnClickListener(this);
 
         ocultarCaracteristicas();
 
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements MostrarInfo, View
         magia.setVisibility(View.GONE);
         fuerza.setVisibility(View.GONE);
         velocidad.setVisibility(View.GONE);
-        btnReiniciar.setVisibility(View.GONE);
+        btnVolver.setVisibility(View.GONE);
     }
 
     @Override
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements MostrarInfo, View
         velocidad.setText(valorVelocidad);
         velocidad.setVisibility(View.VISIBLE);
 
-        btnReiniciar.setVisibility(View.VISIBLE);
+        btnVolver.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements MostrarInfo, View
     @Override
     public void onClick(View view)
     {
-        if(view.getId() == R.id.btnReiniciar)
+        if(view.getId() == R.id.btnVolver)
         {
             ocultarCaracteristicas();
             nm = new Nombre();

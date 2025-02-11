@@ -1,6 +1,6 @@
 package es.studium.myavatar;
 
-public interface MostrarInfo
+public interface Interfaz
 {
     public void ocultarCaracteristicas();
     public void establecerNombre(String nombre);

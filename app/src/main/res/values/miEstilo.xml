@@ -2,6 +2,6 @@
 <resources>
     <style name="miEstilo" parent="@style/Theme.MyAvatar">
         <item name="android:fontFamily">@font/poppins_medium</item>
-        <item name="android:textColor">@color/grisOscuro</item>
+        <item name="android:textColor">@color/gris</item>
     </style>
 </resources>

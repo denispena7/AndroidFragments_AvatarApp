@@ -14,12 +14,12 @@ import androidx.fragment.app.DialogFragment;
 
 public class Especie extends DialogFragment
 {
-    MostrarInfo listener;
+    Interfaz listener;
     MainActivity main;
-    RadioButton espElfo;
-    RadioButton espEnano;
-    RadioButton espHobbit;
-    RadioButton espHumano;
+    RadioButton esElfo;
+    RadioButton esEnano;
+    RadioButton esHobbit;
+    RadioButton esHumano;
 
     @Override
     public void onAttach(@NonNull Context context)
@@ -28,12 +28,12 @@ public class Especie extends DialogFragment
         try
         {
             // Verifica que el contexto implemente la interfaz
-            listener = (MostrarInfo) context;
+            listener = (Interfaz) context;
             main = (MainActivity) context;
         }
         catch (ClassCastException e)
         {
-            throw new ClassCastException(context.toString() + " debe implementar MostrarInfo");
+            throw new ClassCastException(context.toString() + " debe implementar Interfaz");
         }
     }
 
@@ -47,13 +47,13 @@ public class Especie extends DialogFragment
         View myView = inflater.inflate(R.layout.dialogo_especie, null);
         builder.setView(myView);
 
-        espElfo = myView.findViewById(R.id.rdElfo);
-        espEnano = myView.findViewById(R.id.rdEnano);
-        espHobbit = myView.findViewById(R.id.rdHobbit);
-        espHumano = myView.findViewById(R.id.rdHumano);
+        esElfo = myView.findViewById(R.id.rdElfo);
+        esEnano = myView.findViewById(R.id.rdEnano);
+        esHobbit = myView.findViewById(R.id.rdHobbit);
+        esHumano = myView.findViewById(R.id.rdHumano);
 
         // Agrupamos los botones en un array para manejarlos de forma más sencilla
-        RadioButton[] radioButtons = {espElfo, espEnano, espHobbit, espHumano};
+        RadioButton[] radioButtons = {esElfo, esEnano, esHobbit, esHumano};
 
         // Configuramos un OnClickListener para cada RadioButton
         for (RadioButton radioButton : radioButtons)
@@ -71,7 +71,7 @@ public class Especie extends DialogFragment
                 .setPositiveButton(R.string.btnAceptar, null) // Creación del botón positivo, sin funcionalidad aún
                 .setNegativeButton(R.string.btnCancelar, (dialog, which) -> {
                     Toast.makeText(getActivity(), R.string.error_cancelar, Toast.LENGTH_SHORT).show();
-                    main.btnReiniciar.setVisibility(View.VISIBLE);
+                    main.btnVolver.setVisibility(View.VISIBLE);
                 });
 
         AlertDialog dialog = builder.create();
@@ -82,27 +82,27 @@ public class Especie extends DialogFragment
             dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
                     try
                     {
-                        if(espElfo.isChecked())
+                        if(esElfo.isChecked())
                         {
-                            listener.establecerEspecie(espElfo.getText().toString());
+                            listener.establecerEspecie(esElfo.getText().toString());
 
                             mostrarDialogoProfesion(dialog);
                         }
-                        else if(espEnano.isChecked())
+                        else if(esEnano.isChecked())
                         {
-                            listener.establecerEspecie(espEnano.getText().toString());
+                            listener.establecerEspecie(esEnano.getText().toString());
 
                             mostrarDialogoProfesion(dialog);
                         }
-                        else if(espHobbit.isChecked())
+                        else if(esHobbit.isChecked())
                         {
-                            listener.establecerEspecie(espHobbit.getText().toString());
+                            listener.establecerEspecie(esHobbit.getText().toString());
 
                             mostrarDialogoProfesion(dialog);
                         }
-                        else if(espHumano.isChecked())
+                        else if(esHumano.isChecked())
                         {
-                            listener.establecerEspecie(espHumano.getText().toString());
+                            listener.establecerEspecie(esHumano.getText().toString());
 
                             mostrarDialogoProfesion(dialog);
                         }

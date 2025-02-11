@@ -9,6 +9,7 @@
         android:id="@+id/txtNombre"
         android:layout_width="318dp"
         android:layout_height="57dp"
+        android:backgroundTint="@color/VioletaClaro"
         android:ems="10"
         android:hint="@string/hintNombre"
         android:inputType="textPersonName"
